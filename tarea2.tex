@@ -122,6 +122,8 @@
             \begin{center}
                 \includegraphics[width=0.75\textwidth]{deportes-er.png}
             \end{center}  
+            No se especifica la naturaleza del ``estado'' del socio, por lo que
+            se supone que es un atributo simple.
  
         }
         \item {
@@ -266,46 +268,75 @@
     \begin{itemize}
         \item {
             En esta base de datos no hay ningún actor que no haya actuado en 
-        ninguna película
+            ninguna película \\
+            Verdadero. La relación de ``actuar'' tiene participación total para
+            los actores.
         }
         \item {
-            Hay algunos actores que han actuado en más de diez películas.
+            Hay algunos actores que han actuado en más de diez películas. \\
+            Quizá. La cardinalidad de la relación de ``actuar'' es de muchos a 
+            muchos. Por lo que es posile, pero puede ser que no pase.
         }
         \item {
-            Algunos actores han sido protagonistas en varias películas.
+            Algunos actores han sido protagonistas en varias películas. \\
+            Quizá. La relación de ``protagonisar'' tiene cardinalidad de muchos
+            para las películas. Por lo que es posible, pero no necesario que 
+            esto pase.
         }
         \item {
-            Una película sólo puede tener un máximo de dos protagonistas.
+            Una película sólo puede tener un máximo de dos protagonistas. \\
+            Falso. La relación de ``protagonisar'' tiene cardinalidad 1 de parte 
+            de los actores, por lo que las películas pueden tener un máximo de 
+            un protagonista.
         }
         \item {
-            Cada director ha sido actor en alguna película.
+            Cada director ha sido actor en alguna película. \\
+            Verdadero. Todo director es actor, y ya se dijo que todo actor tiene
+            que actuar, en particular los productores.
         }
         \item {
-            Ningún productos ha sido actor alguna vez.
+            Ningún productos ha sido actor alguna vez. \\
+            Falso. Todo los productores son actores, y todos los actores actuan.
         }
         \item {
-            Un productor no puede ser actor en alguna otra película.
+            Un productor no puede ser actor en alguna otra película. \\
+            Falso. No hay restricciones sobre donde actuan los actores. Por lo 
+            que puede pasar que un productor actue en otra película.
         }
         \item {
-            Hay películas con más de una docena de actores.
+            Hay películas con más de una docena de actores. \\
+            Quizá. La relación de ``actuar'' es de muchos a muchos, por lo que 
+            es posible, pero no necesario.
         }
         \item {
-            Algunos productores también han sido directores.
+            Algunos productores también han sido directores. \\
+            Quizá. Al ser la herencia de actor a productor y director parcial, 
+            no hay restricciones sobre eso. Aunque puede darse el caso de que no 
+            ocurra.
         }
         \item {
-            La mayoría de las películas tienen un director y un productor.
+            La mayoría de las películas tienen un director y un productor. \\
+            Falso. Todas las películas tiene un director y un productor, pues 
+            las relaciones de ``producir'' y ``dirigir'' tienen participación 
+            total para la película.
         }
         \item {
-            Algunas películas tienen director, pero varios productores.
+            Algunas películas tienen director, pero varios productores. \\
+            Falso. La relación de ``producir'' tiene cardinalidad 2 para los 
+            productores, por lo que cada película sólo puede tener un productor.
         }
         \item {
             Hay algunos actores que han interpretado el papel de protagonista, 
-            dirigido una película y producido alguna otra.
+            dirigido una película y producido alguna otra. \\
+            Quizá. No hay restricciones entre quién produce, protagonisa y 
+            dirige, por lo que puede ser que pase. Pero puede ser que no pase.
         }
         \item {
-            Ninguna película tiene un director que también haya actuado en ella.
+            Ninguna película tiene un director que también haya actuado en ella.\\
+            Quizá. Si bien no hay restriciones respecto a la participación como 
+            actor y commo director, y puede ser que haya alguna película donde 
+            el director es actor, tampoco hay restricciones que obliguen a que 
+            pase, por lo que puede no pasar.
         }
-        
     \end{itemize}
-
 \end{document}
