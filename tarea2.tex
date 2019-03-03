@@ -55,21 +55,32 @@
             sea posible deberás indicar alguna recomendación al respecto.
             \begin{itemize}
                 \item ¿Un \textbf{atributo compuesto} puede ser \textbf{llave}? \\
-                    Sí puede serlo.
+                    Sí puede serlo. Sólo hay que seguir garantizando que sea 
+                    una combinación única e inmutable de atributos.
                 \item ¿Un \textbf{atributo multivaluado} puede ser \textbf{llave}? \\
-                    No puede serlo.
-                \item ¿Un \textbf{atributo derivado} puede ser llave?
+                    No puede serlo. Al ser varios, tenerlos como llave implicaría
+                    tener varias llaves para la misma instancia, lo cuál no está
+                    permitido.
+                \item ¿Un \textbf{atributo derivado} puede ser llave? \\
+                    Sí, siempre y cuando el proceso que se utilice para calcularlo
+                    sea una función invertible que sólo dependa de atributos que 
+                    nunca cambien. De cualquier manera, en caso de que se 
+                    requiera usar un atributo derivado como llave, sería más 
+                    eficiente usar como llave (tal vez compuesta) los atributos
+                    que se usaron para calcularla.
                 \item ¿Un \textbf{atributo multivaluado} puede ser 
                 \textbf{compuesto}? \\
-                    Sí puede serlo.
+                    Sí puede serlo. Y sus componentes también serán multivaluedas.
                 \item ¿Un \textbf{atributo multivaluado} puede ser \textbf{derivado}?
-                    Sí puede serlo.
+                    Sí puede serlo. Los atributos de los que se calcula deberían
+                    ser o multivaluados o en algún paso del proceso se debe 
+                    utilizar un parámetro multivaluado.
                 \item ¿Qué implicaría la existencia de una \textbf{entidad} cuyos
                 atributos sean \textbf{todos derivados}? \\
-                Que no va a tener atributos almacenados, por lo que durante la 
-                traducción al MR su ``tabla'' estaría vacía, por lo que no sería
-                una tabla. Es decir, al hacer la traducción ya no sería una 
-                entidad.
+                    Que no va a tener atributos almacenados, por lo que durante la 
+                    traducción al MR su ``tabla'' estaría vacía, por lo que no sería
+                    una tabla. Es decir, al hacer la traducción ya no sería una 
+                    entidad.
             \end{itemize} 
         }
         % c
@@ -106,7 +117,12 @@
             asociada uno o varios artículos deportivos que se alquilan aparte.
             Por ejemplo, si deseamos realizar una reservación para jugar 
             voleibol, se debe reservar una instalación con una cancha
-            pertinente, una red y un balón.
+            pertinente, una red y un balón. \\
+            El diagrama propuesto es 
+            \begin{center}
+                \includegraphics[width=0.75\textwidth]{deportes-er.png}
+            \end{center}  
+ 
         }
         \item {
             \textbf{Sistema de información geográfica} \\
@@ -238,7 +254,7 @@
 
     Considera el esquema \textbf{E/R} para la base de datos \textbf{Películas} 
     de la figura siguiente y asume que la base de datos está poblada. 
-    \textbf{Actor} se utilzia como término genérico e incluye actrices. Dadas 
+    \textbf{Actor} se utiliza como término genérico e incluye actrices. Dadas 
     las restricciones mostradas en el esquema \textbf{E/R}, responde a las 
     siguientes afirmaciones con \textbf{Verdadero, Falso} o \textbf{Quizás}
     (\textit{asigna está última respuesta a las afirmaciones que, no pudiendo 
