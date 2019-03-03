@@ -36,7 +36,17 @@
             en un conjunto de \textbf{entidades fuertes} añadiendole a sus 
             atributos la \textbf{llave primaria} de conjunto de entidades fuertes
             a la que está asociado. Describe qué tipo de redundancia resultaría 
-            si se realiza dicha conversión.
+            si se realiza dicha conversión. \\
+            Esto haría que las instancias de la entidad débil estén sujetas a 
+            una única instancia de la entidad fuerte, pues las llaves son únicas. 
+            Entonces, si antes de agregar la llave, una instancia débil $D$ 
+            pertenece a varias instancias fuertes $F_0, ..., F_n$, al momento 
+            de agregar la llave, $D$ ya no sería una instancia válida, pues su
+            llave estaría multivaluada. Entonces, habría que crear nuevas 
+            instancias $D_0, ..., D_n$ donde $D_i$ tendría la llave de $F_i$,
+            pero en todos sus demás atributos, todas las $D_i$ tendrían 
+            exactamente la misma información. Por lo que toda esa información 
+            repetida sería reduntante.
         }
         % b
         \item {
@@ -44,14 +54,22 @@
             \textbf{si son posibles o no}, justificando tu respuesta. Cuando no 
             sea posible deberás indicar alguna recomendación al respecto.
             \begin{itemize}
-                \item ¿Un \textbf{atributo compuesto} puede ser \textbf{llave}?
-                \item ¿Un \textbf{atributo multivaluado} puede ser \textbf{llave}?
+                \item ¿Un \textbf{atributo compuesto} puede ser \textbf{llave}? \\
+                    Sí puede serlo.
+                \item ¿Un \textbf{atributo multivaluado} puede ser \textbf{llave}? \\
+                    No puede serlo.
                 \item ¿Un \textbf{atributo derivado} puede ser llave?
                 \item ¿Un \textbf{atributo multivaluado} puede ser 
-                \textbf{compuesto}?
+                \textbf{compuesto}? \\
+                    Sí puede serlo.
                 \item ¿Un \textbf{atributo multivaluado} puede ser \textbf{derivado}?
+                    Sí puede serlo.
                 \item ¿Qué implicaría la existencia de una \textbf{entidad} cuyos
-                atributos sean \textbf{todos derivados}?
+                atributos sean \textbf{todos derivados}? \\
+                Que no va a tener atributos almacenados, por lo que durante la 
+                traducción al MR su ``tabla'' estaría vacía, por lo que no sería
+                una tabla. Es decir, al hacer la traducción ya no sería una 
+                entidad.
             \end{itemize} 
         }
         % c
