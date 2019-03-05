@@ -90,9 +90,11 @@
             Explica el concepto de \textbf{agregación} en el \textbf{modelo E/R}
             y proporciona un par de ejemplos. 
             
-            La agregación es una notación a través de la cual se engloba a un
+            La agregación es una abstracción a través de la cual las relaciones se
+            tratan como entidades de nivel más alto; se engloba a un
             grupo de entidades y relaciones para generar un tipo de superentidad
             al mismo tiempo que se preserva la independencia de lo encerrado.
+            
             Esto se hace con la finalidad de facilitar el manejo de relaciones
             con otras partes del diagrama.
             
@@ -104,7 +106,6 @@
             Usaremos agregación para definir una entidad que nos permita
             asociarles un parque por su era histórica al mismo tiempo que
             mantenemos nuestro complicadísimo esquema de datos de dinosaurios.
-        \newpage
             \begin{center}
                 \includegraphics[width=1\textwidth]{dino-er.png}
             \end{center}  
@@ -124,6 +125,11 @@
             Diseña un \textbf{modelo E/R} en donde reflejes los conceptos 
             revisados para el tema de \textbf{Modelo E/R} (no consideres el 
             \textit{Modelo E/R extendido}).
+            
+            \begin{center}
+                \includegraphics[width=0.5\textwidth]{estrella-er.png}
+                %placeholder
+            \end{center}  
         }
     \end{enumerate}
     \newpage
@@ -213,6 +219,10 @@
                     identificador, nombre y descripción.
                 }
             \end{itemize}
+            Para este caso el diagrama que se propone es el siguiente:\\
+        	\begin{center}
+        		\includegraphics[width=0.75\textwidth]{2b.png}
+        	\end{center} 
         }
         \item {
             \textbf{Estrella de la muerte} \\
@@ -282,10 +292,12 @@
             \end{center}  
         }
     \end{enumerate}
-
+    \newpage
     \section{Ingeniería inversa}
-
+    
+    {
     \begin{wrapfigure}{r}{0.40\textwidth}
+        \vspace{-1.5cm}
         \centering
         \includegraphics[width=0.40\textwidth]{peliculas-er.png}
     \end{wrapfigure}
@@ -300,6 +312,9 @@
     en el esquema mostrado}).
 
     \textbf{Justifica TODAS tus respuestas}
+    
+    }
+    
 
     \begin{itemize}
         \item {
