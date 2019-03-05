@@ -1,4 +1,6 @@
 \documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
 
 % Más opciones para enumerar
 \usepackage{enumitem}
@@ -9,7 +11,7 @@
 % Manejo de imágenes
 \usepackage{graphicx}
 \usepackage{wrapfig}
-\graphicspath{{img/}}
+\graphicspath{{/img}}
 
 \begin{document}
     \title{
@@ -86,9 +88,36 @@
         % c
         \item {
             Explica el concepto de \textbf{agregación} en el \textbf{modelo E/R}
-            y proporciona un par de ejemplos.    \\
-            La agregación es una abstracción a través de la cual las relaciones se
-            tratan como entidades de nivel más alto.
+            y proporciona un par de ejemplos. 
+            
+            La agregación es una notación a través de la cual se engloba a un
+            grupo de entidades y relaciones para generar un tipo de superentidad
+            al mismo tiempo que se preserva la independencia de lo encerrado.
+            Esto se hace con la finalidad de facilitar el manejo de relaciones
+            con otras partes del diagrama.
+            
+            Por ejemplo, en el sigiente diagrama tendremos especies de 
+            dinosaurios, con algunas relaciones simbólicas y aunque los
+            atributos y estan fuera de la intención de este ejercicio, no es
+            difícil imaginar que podríamos almacenar dietas, tamaños, etc.
+            
+            Usaremos agregación para definir una entidad que nos permita
+            asociarles un parque por su era histórica al mismo tiempo que
+            mantenemos nuestro complicadísimo esquema de datos de dinosaurios.
+        \newpage
+            \begin{center}
+                \includegraphics[width=1\textwidth]{dino-er.png}
+            \end{center}  
+            
+            Asimismo, podríamos, por ejemplo, tener un videojuego en el que hay
+            dos clanes de los cuales se quiere almacenar algunos datos para un
+            torneo (nosotros somos los desarolladores y queremos datos
+            relacionados al torneo sobre cada equipo) al
+            mismo tiempo que queremos tratar a cada equipo como una entidad.
+            \begin{center}
+                \includegraphics[width=1\textwidth]{1c.png}
+            \end{center}  
+            
         }
         % d
         \item {
@@ -97,6 +126,7 @@
             \textit{Modelo E/R extendido}).
         }
     \end{enumerate}
+    \newpage
 
     \section{Modelo Entidad/Relación}
     \begin{enumerate}[label = (\alph*)]
@@ -183,11 +213,6 @@
                     identificador, nombre y descripción.
                 }
             \end{itemize}
-            
-            Para este caso el diagrama que se propone es el siguiente:\\
-        	\begin{center}
-        		\includegraphics[width=0.75\textwidth]{2b.png}
-        	\end{center} 
         }
         \item {
             \textbf{Estrella de la muerte} \\
@@ -253,7 +278,7 @@
             \end{itemize}
             El diagrama propuesto es:
             \begin{center}
-                \includegraphics[width=0.75\textwidth]{estrella-er.png}
+                \includegraphics[width=0.99\textwidth]{estrella-er.png}
             \end{center}  
         }
     \end{enumerate}
